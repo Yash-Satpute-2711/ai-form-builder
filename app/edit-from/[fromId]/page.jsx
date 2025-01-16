@@ -119,7 +119,7 @@ function EditFrom({ params }) {
               text:
                 jsonFrom?.formHeading +
                 " ,Build your own form with AI form builder",
-              url: process.env.NEXT_PUBLIC_BASE_URL + "/aifrom/" + record?.id,
+              url: "/aifrom/" + record?.id,
               title: jsonFrom?.formTitle,
             }}
             onClick={() => console.log("shared successfully!")}

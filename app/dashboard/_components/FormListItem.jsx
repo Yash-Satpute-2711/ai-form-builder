@@ -78,7 +78,7 @@ function FormListItem({ formRecord, jsonforms, refreshData }) {
             text:
               jsonforms?.formHeading +
               " ,Build your own form with AI form builder",
-            url: process.env.NEXT_PUBLIC_BASE_URL + "/aifrom/" + formRecord?.id,
+            url: "/aifrom/" + formRecord?.id,
             title: jsonforms?.formTitle,
           }}
           onClick={() => console.log("shared successfully!")}
