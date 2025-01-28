@@ -1,13 +1,17 @@
 "use client";
-import React from "react";
-import { Button } from "@/components/ui/button";
-import CreateFrom from "./_components/CreateFrom";
-import FormList from "./_components/FormList";
-import { LibraryBig, LineChart, MessageSquare, Shield } from "lucide-react";
+import React, { use, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
-function Dashboard() {
+import { LibraryBig, LineChart, MessageSquare, Shield } from "lucide-react";
+import { db } from "@/configs";
+import { JsonForms } from "@/configs/schema";
+import { eq } from "drizzle-orm";
+import { useUser } from "@clerk/clerk-react";
+import { index, json } from "drizzle-orm/mysql-core";
+import FormListItemReso from "./_components/FormListitemReso";
+
+function Responses() {
   const menuList = [
     {
       id: 1,
@@ -21,19 +25,25 @@ function Dashboard() {
       icon: MessageSquare,
       path: "/dashboard/responses",
     },
-    // {
-    //   id: 1,
-    //   name: "Analytics",
-    //   icon: LineChart,
-    //   path: "/dashboard/analytics",
-    // },
-    // {
-    //   id: 1,
-    //   name: "Upgrade",
-    //   icon: Shield,
-    //   path: "/dashboard/upgrade",
-    // },
   ];
+
+  const { user } = useUser();
+  const [formList, setFormList] = useState([]);
+
+  useEffect(() => {
+    user && getFromList();
+  }, [user]);
+
+  const getFromList = async () => {
+    const result = await db
+      .select()
+      .from(JsonForms)
+      .where(eq(JsonForms.createdBy, user?.primaryEmailAddress?.emailAddress));
+
+    setFormList(result);
+    console.log(result);
+  };
+
   const path = usePathname();
   useEffect(() => {
     // console.log(path);
@@ -59,14 +69,20 @@ function Dashboard() {
           ))}
         </div>
         <h2 className="text-3xl sm:grid-cols-1 md:grid-cols-2 font-bold flex justify-between items-center">
-          Dashboard
-          <CreateFrom />
+          Responses
         </h2>
-        {/* List of From */}
-        <FormList />
+
+        <div className="mt-5 grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+          {formList.map((form, index) => (
+            <FormListItemReso
+              formRecord={form}
+              jsonforms={JSON.parse(form.jsonfrom)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-export default Dashboard;
+export default Responses;

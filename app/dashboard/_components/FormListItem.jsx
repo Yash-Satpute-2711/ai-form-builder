@@ -39,7 +39,7 @@ function FormListItem({ formRecord, jsonforms, refreshData }) {
   };
 
   return (
-    <div className="border shadow-sm rounded-lg p-4 mb-3">
+    <div className="border shadow-sm rounded-lg p-4 my-5">
       <div className="flex justify-between">
         <h2></h2>
 

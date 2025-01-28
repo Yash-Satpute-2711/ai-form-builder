@@ -37,7 +37,8 @@
     "react-web-share": "^2.0.2",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "daisyui": "^4.12.10",
