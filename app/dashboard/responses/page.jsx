@@ -9,7 +9,7 @@ import { JsonForms } from "@/configs/schema";
 import { eq } from "drizzle-orm";
 import { useUser } from "@clerk/clerk-react";
 import { index, json } from "drizzle-orm/mysql-core";
-import FormListItemReso from "./_components/FormListitemReso";
+import FormListItemReso from "./_components/FormListItemReso";
 
 function Responses() {
   const menuList = [
