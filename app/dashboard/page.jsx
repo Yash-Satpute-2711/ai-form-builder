@@ -21,18 +21,6 @@ function Dashboard() {
       icon: MessageSquare,
       path: "/dashboard/responses",
     },
-    // {
-    //   id: 1,
-    //   name: "Analytics",
-    //   icon: LineChart,
-    //   path: "/dashboard/analytics",
-    // },
-    // {
-    //   id: 1,
-    //   name: "Upgrade",
-    //   icon: Shield,
-    //   path: "/dashboard/upgrade",
-    // },
   ];
   const path = usePathname();
   useEffect(() => {
