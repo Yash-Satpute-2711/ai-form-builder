@@ -41,7 +41,7 @@ function LiveAiForm({ params }) {
       )}
       <Link
         className="flex items-center gap-2 bg-black px-3 text-white p-2 rounded-full fixed bottom-10 left-10 cursor-pointer"
-        href={process.env.NEXT_PUBLIC_BASE_URL}
+        href={`/`}
       >
         <Image
           src={"/settinglogo.svg"}
