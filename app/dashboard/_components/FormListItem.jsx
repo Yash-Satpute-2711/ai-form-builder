@@ -43,7 +43,7 @@ function FormListItem({ formRecord, jsonforms, refreshData }) {
       <div className="flex justify-between">
         <h2></h2>
 
-        <AlertDialog>
+        {/* <AlertDialog>
           <AlertDialogTrigger asChild>
             <Trash
               className="h-5 w-5 text-red-600 cursor-pointer
@@ -66,7 +66,7 @@ function FormListItem({ formRecord, jsonforms, refreshData }) {
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
-        </AlertDialog>
+        </AlertDialog> */}
       </div>
 
       <h2 className=" text-lg text-black">{jsonforms?.formTitle}</h2>
