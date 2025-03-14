@@ -8,6 +8,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function LiveAiForm({ params }) {
+  const [isHovered, setIsHovered] = useState(false);
   const [record, setRecord] = useState();
   const [jsonFrom, setJsonFrom] = useState([]);
   useEffect(() => {
@@ -40,16 +41,19 @@ function LiveAiForm({ params }) {
         />
       )}
       <Link
-        className="flex items-center gap-2 bg-black px-3 text-white p-2 rounded-full fixed bottom-10 left-10 cursor-pointer"
+        className="flex items-center gap-2 bg-black px-3 text-white p-2 rounded-full fixed bottom-5 left-5 fixed bottom-5 left-5 cursor-pointer transition-all duration-300"
         href={`/`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <Image
-          src={"/settinglogo.svg"}
-          alt="logo"
-          width={30}
-          height={30}
-        ></Image>
-        Build your own AI form
+        
+          <Image src={"/settinglogo.svg"} alt="logo" width={30} height={30} />
+        
+        {isHovered && (
+          <span className="whitespace-nowrap bg-black text-white px-3 py-1 rounded-lg ml-10">
+            Build your own AI form
+          </span>
+        )}
       </Link>
     </div>
   );
