@@ -52,16 +52,16 @@ function CreateFrom() {
   };
   return (
     <div>
-      <Button onClick={() => setOpenDailog(true)}>+ Create From</Button>
+      <Button onClick={() => setOpenDailog(true)}>+ Create Form</Button>
       <Dialog open={openDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Create new from </DialogTitle>
+            <DialogTitle>Create new form </DialogTitle>
             <DialogDescription>
               <Textarea
                 className="my-2"
                 onChange={(event) => setUserInput(event.target.value)}
-                placeholder="Write Description of your from "
+                placeholder="Write Description of your form "
               />
               <div className="flex gap-2 my-3 justify-end">
                 <Button

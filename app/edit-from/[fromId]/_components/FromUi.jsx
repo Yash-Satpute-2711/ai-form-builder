@@ -92,7 +92,14 @@ function FromUi({
         {jsonFrom?.formTitle}
       </h2>
       <h2 className="text-sm text-gray-400 text-center">
-        {jsonFrom?.formHeading || jsonFrom?.formSubHeading}
+        {jsonFrom?.formHeading
+          ? jsonFrom.formHeading.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))
+          : jsonFrom?.formSubHeading}
       </h2>
       {jsonFrom?.fields?.map((field, index) => (
         <div key={index} className="flex items-center gap-2">

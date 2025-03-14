@@ -15,7 +15,7 @@ function Responses() {
   const menuList = [
     {
       id: 1,
-      name: "My From",
+      name: "My Form",
       icon: LibraryBig,
       path: "/dashboard",
     },
