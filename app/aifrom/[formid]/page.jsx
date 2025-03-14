@@ -41,16 +41,27 @@ function LiveAiForm({ params }) {
         />
       )}
       <Link
-        className="flex items-center gap-2 bg-black px-3 text-white p-2 rounded-full fixed bottom-5 left-5 fixed bottom-5 left-5 cursor-pointer transition-all duration-300"
+        className="flex items-center gap-2 bg-black px-3 text-white p-2 rounded-full fixed bottom-5 left-5 fixed bottom-5 left-5 cursor-pointer transition-all duration-300 ease-in-out"
         href={`/`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        
-          <Image src={"/settinglogo.svg"} alt="logo" width={30} height={30} />
-        
+        <Image
+          src={"/settinglogo.svg"}
+          alt="logo"
+          width={30}
+          height={30}
+          className="transition-transform duration-300 ease-in-out transform hover:scale-110"
+        />
+
         {isHovered && (
-          <span className="whitespace-nowrap bg-black text-white px-3 py-1 rounded-lg ml-10">
+          <span
+            className={`whitespace-nowrap transition-all duration-300 ease-in-out transform ${
+              isHovered
+                ? "opacity-100 scale-100 translate-x-0 ml-2"
+                : "opacity-0 scale-90 -translate-x-5"
+            }`}
+          >
             Build your own AI form
           </span>
         )}
