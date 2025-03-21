@@ -25,7 +25,7 @@ export const metadata = {
   title: "Ai Form Builder",
   description: "Make the Ai Form",
   icons: {
-    icon: "logo.png" ,sizes: "512x512", type: "image/png", // Custom favicon
+    icon: "logo.png" , // Custom favicon
     shortcut: "logo.png",
     apple: "logo.png",
   },
