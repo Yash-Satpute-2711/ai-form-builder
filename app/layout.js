@@ -24,6 +24,11 @@ const geistMono = localFont({
 export const metadata = {
   title: "Ai Form Builder",
   description: "Make the Ai Form",
+  icons: {
+    icon: "logo.png", // Custom favicon
+    shortcut: "logo.png",
+    apple: "logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
